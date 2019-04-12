@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="Num">
+
+    <button onclick="Bi_De_Con();">Binary to
+        Decimal</button>
+
+    <button onclick="De_Bi_Con();">Decimal to Binary</button>
+    <p id="resu"></p>
+    <script>
+        var num = 0;
+
+        function De_Bi_Con(bit) {
+            let num = document.getElementById('Num').value;
+            deci = Number(num, 10).toString(2);
+            document.getElementById("resu").innerHTML = deci;
+        }
+
+
+
+
+        function Bi_De_Con() {
+            let deci = +0;
+            let bit = +1;
+            var str = document.getElementById("Num").value;
+            for (let i = 0; i < str.length; i++) {
+                let Numb = +(str[str.length - i - 1]);
+                if (Numb === 1) {
+                    deci += bit;
+                }
+                bit *= 2;
+                document.getElementById("resu").innerHTML = deci;
+            }
+
+        }
+    </script>
+</body>
+
+</html>
+
